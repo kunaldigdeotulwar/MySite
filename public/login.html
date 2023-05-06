@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login</h2>
+      <form action="login.php" method="POST" onsubmit="return validateForm()">
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var errorMessage = document.getElementById("error-message");
+
+        // Check if username is empty
+        if (username == "") {
+          errorMessage.innerHTML = "Please enter a username.";
+          return false;
+        }
+
+        // Check if password is empty
+        if (password == "") {
+          errorMessage.innerHTML = "Please enter a password.";
+          return false;
+        }
+
+        // You can add more validation rules here if needed
+
+        // Clear error message
+        errorMessage.innerHTML = "";
+        return true;
+      }
+    </script>
+  </body>
+</html>
